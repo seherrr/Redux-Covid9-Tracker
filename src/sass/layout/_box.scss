@@ -1,0 +1,70 @@
+@import '../Helpers/mixins';
+@import '../Helpers/variables';
+
+.boxes {
+    margin-top: 10px;
+    @include flexbox($direction: row);
+    width: 900px;
+    gap: 20px;
+    color: $white;
+
+    &__confirmed {
+        @include box($background: $box1-background);
+    }
+
+    &__recovered {
+        @include box($background: $box2-background);
+    }
+
+    &__deaths {
+        @include box($background: $box3-background);
+    }
+
+    @media screen and (max-width: $smaller-screen) {
+        & {
+            @include flexbox($direction: column);
+            width: 100%;
+            gap: 10px;
+        }
+    }
+
+    @media screen and (min-width: $smaller-screen2) {
+        & {
+            @include flexbox($direction: column);
+            width: 90%;
+            gap: 10px;
+        }
+    }
+
+    @media screen and (min-width: $small-screen) {
+        & {
+            @include flexbox($direction: column);
+            width: 100%;
+            gap: 10px;
+        }
+    }
+
+    @media screen and (min-width: $medium-screen) {
+        & {
+            @include flexbox($direction: row);
+            width: 100%;
+            gap: 10px;
+        }
+    }
+
+    @media screen and (min-width: $large-screen) {
+        & {
+            @include flexbox($direction: row);
+            width: 100%;
+            gap: 10px;
+        }
+    }
+
+    @media screen and (min-width: $extra-large-screen) {
+        & {
+            @include flexbox($direction: row);
+            width: 100%;
+            gap: 20px;
+        }
+    }
+}
